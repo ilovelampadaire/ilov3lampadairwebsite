@@ -20,3 +20,24 @@ p {
 img {
     width: 30%;
 }
+
+.fa-tools {
+    font-size: 40;
+}
+
+.squarerealistic {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(54, 50, 50);
+    box-shadow: 10px 10px 8px rgb(39, 35, 35);
+    position: relative;
+    animation: testanimation 5s infinite;
+}
+
+@keyframes testanimation {
+    0% {top: 0px;}
+    25% {top: 200px;}
+    50% {top: 500px;}
+    80% {top: 18px;}
+    100% {top: 100px;}
+}
