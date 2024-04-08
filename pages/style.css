@@ -12,6 +12,14 @@
     background-size: cover;
 }
 
+.size1 {
+    width: 200px;
+}
+
+.size2 {
+    width: 120px;
+}
+
 body {
     background: rgb(239, 230, 255);
 }
