@@ -1,3 +1,17 @@
+.parallax {
+    /* The image used */
+    background-image: url("bg.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body {
     background: rgb(239, 230, 255);
 }
@@ -6,6 +20,14 @@ h1 {
     font-family: "Montserrat";
     font-size: 30;
     text-align: center;
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
 }
 
 a {
@@ -39,4 +61,15 @@ img {
     50% {top: 500px;}
     80% {top: 18px;}
     100% {top: 100px;}
+}
+
+a {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    top: 50px;
+    left: 5;
+    right: 10px;
+    bottom: 50px;
+    text-shadow: 5px 5px 5px rgb(39, 35, 35);
 }
