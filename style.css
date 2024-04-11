@@ -1,4 +1,12 @@
-.parallax {
+@font-face {
+  font-family: "W95FA";
+  src:
+    local("W95FA"),
+    url("font/w95fa/W95FA.otf") format("opentype"),
+    url("font/w95fa/w95fa.woff") format("woff");
+}
+
+body {
     /* The image used */
     background-image: url("bg.jpg");
   
@@ -10,23 +18,26 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+	
+	/* Remove scrollbar and preserve width */
+	width:100vw;height:100vh;
+	margin:0;padding:0;border:none;
+	float:left;
+	overflow-x:hidden;overflow-y:auto;
 }
 
-.spaceing {
-    left: 50px;
+ul{
+	list-style-type:none;
+	display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
-.spaceing2 {
-    left: 100px;
-}
-
-.spaceing3 {
-    left: 150px;
-}
-
-body {
+html {
     background: rgb(239, 230, 255);
 }
+
+li{width:fit-content;margin:0 30px;}
 
 h1 {
     font-family: "Montserrat";
@@ -42,16 +53,30 @@ h1 {
     bottom: 10px;
 }
 
+a, div.window{
+	border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
+    background-color: silver;
+}
+
+a:active{
+	border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+	box-shadow: inset 1px 1px #000, 1px 0 #dfdfdf, 0 1px #dfdfdf, 1px 1px #000;
+}
+
 a {
-    font-family: "Montserrat";
-        padding-bottom: 50px;
-        margin-bottom: 50px;
-        position: relative;
-        top: 20px;
-        left: 5;
-        right: 10px;
-        bottom: 50px;
-        text-shadow: 5px 5px 5px rgb(39, 35, 35);
+	color: black;
+	text-decoration: none;
+	font-family:"W95FA", monospace;
+	padding:2px 4px;
+	cursor: pointer;
+    //text-shadow: 5px 5px 5px rgb(39, 35, 35);
 }
 
 p {
@@ -81,4 +106,31 @@ img {
     50% {top: 500px;}
     80% {top: 18px;}
     100% {top: 100px;}
+}
+
+div.window{
+	position:absolute;
+}
+div.window div.window-header{
+	background: linear-gradient(90deg, #08f, #0af);
+    color: white;
+    font-family: 'W95FA', monospace;
+    padding: 1px 4px;
+}
+div.window div.window-content:not(div.window-content:has(iframe)){
+	padding: 0px 16px;
+	display:flex;
+}
+div.window div.window-content iframe{
+	border:none;
+	width:100%;
+}
+div.window div.window-header a.winrem{
+	width: 10px;
+    display: inline-block;
+    float: right;
+    height: 10px;
+}
+*{
+	-webkit-font-smoothing: none !important;
 }
