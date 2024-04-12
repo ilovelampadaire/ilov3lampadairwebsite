@@ -5,6 +5,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
+	<div id="background"></div>
 	<ul>
 		<li><a onclick="galleryWindow();">Gallery</a></li>
 		<li><a onclick="contactWindow();">Contact Me</a></li>
@@ -25,6 +26,15 @@
 			</div>
 		</div>-->
 	</div>
+	<div id="taskbar">
+		<div id="tasktext">
+		</div>
+		<div id="settings">
+			<input type="checkbox" id="wallpaperEffect" name="wallpaperEffect" />
+			<label for="wallpaperEffect">Use Wallpaper Effect (laggy)</label>
+		</div>
+	</div>
+	
 	<script>
 		let zIndexLast=100;
 		function openWindow(width,top,left,title,content){
@@ -76,6 +86,77 @@
 		function friendsWindow(){
 			openWindow("50vw","30rem","25vw","my friends","<span><p>Here is the list of all of my friends i enjoy talking to!<br><hr><p>Wahlolly: <a href=\"https://discord.gg/CspDWhYxrN\">Discord Server</a></p><p>Michael (Mike): @mikethe223_2491 on Discord</p><p>Slinx92: <a href=\"https://slinx92.github.io/\">Website</a><a href=\"https://discord.gg/5CSFDVamPA\">Discord Server</a></p><p>Teleporter cell: @superbro112lol on Discord</p><p>Leaf: <a href=\"https://discord.gg/AVEEaJyGY6\">Discord Server</a>, @astrumleaf on Discord</p><p>Unity (itsunitygd)</p><p>Floppy: @slashred on Discord</p><p>Buggyruy1_hi</p><p>Tema5002</p><p>Milbru</p><p>Crecher</p></span>")
 		}
+		
+		let ff=["Web pages cannot play audio, nor video containing audio, without any user interaction.","ilovelampadaire is shortened to \"lamp\" due to the name being too big.","Most people you'll find uses Discord.","Every link is a button, even those that aren't a link. Did you catch it?","SVG filters are great and all but they lag Chrome.","The gallery is actually an &lt;iframe&gt; element, this is why moving the gallery window is buggy.","Estimated diagram of effort put into creating this site: Ponali 85%, ilovelampadaire 15%","Upon updating an Apple device, Bluetooth gets set automatically on. This is why more battery gets taken.","The website source code is available on GitHub, exactly how Ponali managed to collaborate in making this.","Hexadecimal is not a file format.","0o0 is a valid number, and corresponds to 0 in octal.","When searching for an unicode character with no digits from A-F, Google turns silly and thinks it's a math equation.","Python needs to turn into a compiled language.","New lines are actually two ASCII characters when making a text file in Windows.","The Node.JS REPL console uses ANSI for color and logging text below your cursor.","Before Ponali got a chance to edit this, the website had a style for being out of budget, and so does the language.","Deprecated/Unused elements in HTML are a thing, so be cautious.","Video game consoles always output video in 60FPS (or a little bit less) to comply with the format, and it stayed that way, except in Europe where the framerate got down to 50.","The first thing lampadaire thought to \"very very old/webcore website\" was apparently vaporwave. It's not wrong, but also not right - However, since the aesthetic of using this style was good enough, it was kept.","Computers in 2022 were very fast until Windows 11 arrived with a lot of bloatware.","lampadaire's bio contains a french cliché of a baguette.","Even though you may find this website filled with quality, this was rushed in a couple of hours.","lampadaire has a <i>LOT</i> of friends. So much so, that everything can't be put inside of the \"My Friends\" section."];
+		ff.push("There are "+(ff.length+1)+" fun facts as of right now.")
+		
+		function getFunFact(){
+			return "Fun Fact: "+ff[Math.floor(Math.random()*ff.length)];
+		}
+		
+		function updateTaskText(){
+			document.querySelector("#tasktext").innerHTML="<marquee scrollamount=\"10\">"+getFunFact()+"</marquee>";
+		}
+		
+		window.onload=(()=>{
+			let d=document,Q=(a)=>d.querySelectorAll(a),q=(a)=>Q(a)[0];
+			updateTaskText();
+			q("#tasktext").addEventListener("click",updateTaskText);
+			q("#settings #wallpaperEffect").addEventListener("click",()=>{
+				if(q("#background").classList.contains("svgf")){q("#background").classList.remove("svgf")};
+				if(q("#settings #wallpaperEffect").checked){q("#background").classList.add("svgf")}
+			})
+		})
 	</script>
+	
+	<svg>
+	<defs>
+	<filter id="pixelate" x="0" y="0">
+		<feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="2" id="turb" stitchTiles="stitch" result="turbulence"/>
+		<feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="B"/>
+		<feGaussianBlur result="given" stdDeviation="10" id="blur" />
+		
+		<feFlood x="4" y="4" height="2" width="2"/>
+		
+		<feComposite width="10" height="10" id="px"/>
+		
+		<feTile result="a"/>
+		
+		<feComposite in="given" in2="a" 
+					 operator="in"/>
+		
+		<feMorphology operator="dilate"
+					  radius="5"/>
+		
+		<feBlend mode="difference" in2="SourceGraphic" />
+		<feBlend mode="exclusion" in2="SourceGraphic" />
+		
+	  </filter>
+	  <animate
+		  xlink:href="#px"
+		  attributeName="width"
+		  values="4;8;7;6;4"
+		  dur="5s"
+		  repeatCount="indefinite" />
+	  <animate
+		  xlink:href="#px"
+		  attributeName="height"
+		  values="4;6;7;8;4"
+		  dur="5s"
+		  repeatCount="indefinite" />
+	  <animate
+		  xlink:href="#blur"
+		  attributeName="stdDeviation"
+		  values="2 2;5 1;4 4;1 5;2 2"
+		  dur="10s"
+		  repeatCount="indefinite" />
+	  <animate
+		  xlink:href="#turb"
+		  attributeName="seed"
+		  values="1;20"
+		  dur="10s"
+		  repeatCount="indefinite" />
+	</defs>
+	</svg>
 </body>
 </html>
