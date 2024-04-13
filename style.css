@@ -73,6 +73,10 @@ h1 {
 	/* why did you even put these in??? */
 }
 
+div.window{
+	animation:500ms winload linear;
+}
+
 a, div.window, div#taskbar{
 	border-top: 1px solid #fff;
     border-left: 1px solid #fff;
@@ -176,4 +180,12 @@ div#taskbar div#settings{
 	float: right;
 	display: flex;
     justify-content: flex-end;
+}
+@keyframes winload{
+	from{
+		clip: rect(0, 100vw, 0vh, 0);
+	}
+	to{
+		clip: rect(0, 100vw, 100vh, 0);
+	}
 }
