@@ -220,13 +220,133 @@ window.addEventListener('DOMContentLoaded', onLoad);
 		max-height:80%;
 	}
 	
-	body{background-color:#fff;}
+	body{
+		background: url(win95clouds.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		animation: backgroundScroll 30s infinite alternate ease-in-out;
+	}
+	
+	@keyframes backgroundScroll{
+		from{background-position:0%;}
+		to{background-position:100%;}
+	}
+	
+	
+	.scroll::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+	}
+
+	.scroll::-webkit-scrollbar-track {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVQIW2M4fPz0////GYAYyAIASnoKpV3w4kgAAAAASUVORK5CYII=");
+	image-rendering: pixelated;
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	}
+
+	.scroll::-webkit-scrollbar-track:active {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEElEQVQIW2No6+pjgAAgCwAWogM9VKrgGQAAAABJRU5ErkJggg==");
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	}
+
+	.scroll::-webkit-scrollbar-thumb {
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+	width: 16px;
+	height: 16px;
+	background-color: #cccccc;
+	z-index: 1;
+	}
+
+	.scroll::-webkit-scrollbar-corner {
+	background-color: #cccccc;
+	}
+
+	.scroll::-webkit-resizer {
+	width: 16px;
+	height: 16px;
+	background-color: #cccccc;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+	}
+
+	.scroll::-webkit-scrollbar-button, .scroll::-webkit-scrollbar-button {
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-color: #cccccc;
+	image-rendering: pixelated;
+	background-repeat: no-repeat;
+	background-position: center center;
+	}
+
+	.scroll::-webkit-scrollbar-button:active, .scroll::-webkit-scrollbar-button:active {
+	background-position: 2px 2px;
+	}
+
+	.scroll::-webkit-scrollbar-button:horizontal:decrement, .scroll::-webkit-scrollbar-button:horizontal:decrement {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+	}
+
+	.scroll::-webkit-scrollbar-button:horizontal:increment, .scroll::-webkit-scrollbar-button:horizontal:increment {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+	}
+
+	.scroll::-webkit-scrollbar-button:vertical:decrement, .scroll::-webkit-scrollbar-button:vertical:decrement {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+	}
+
+	.scroll::-webkit-scrollbar-button:vertical:increment, .scroll::-webkit-scrollbar-button:vertical:increment {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+	}
+
+	.scroll::-webkit-scrollbar-button:horizontal:increment:start, .scroll::-webkit-scrollbar-button:horizontal:increment:start {
+	display: none;
+	}
+
+	.scroll::-webkit-scrollbar-button:horizontal:decrement:end, .scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+	display: none;
+	}
+
+	.scroll::-webkit-scrollbar-button:vertical:increment:start, .scroll::-webkit-scrollbar-button:vertical:increment:start {
+	display: none;
+	}
+
+	.scroll::-webkit-scrollbar-button:vertical:decrement:end, .scroll::-webkit-scrollbar-button:vertical:decrement:end {
+	display: none;
+	}
+
+	::-webkit-scrollbar-button:active, ::-webkit-scrollbar-button:active {
+	border-top: 1px solid #868a8e;
+	border-left: 1px solid #868a8e;
+	border-bottom: 1px solid #868a8e;
+	border-right: 1px solid #868a8e;
+	box-shadow: none;
+	}
 </style>
 
 <title id="title">gallery</title>
 
 </head>
-<body>
+<body class="scroll">
 
 <h1 id="header">Index of /gallery/</h1>
 
