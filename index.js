@@ -46,7 +46,7 @@ function galleryWindow(){
 	openWindow("60vw","16rem","20vw","gallery","<iframe style=\"height:30rem;\" src=\"gallery.html\"></iframe>");
 }
 function friendsWindow(){
-	openWindow("50vw","5rem","25vw","my friends","<span><p>Here is the list of all of my friends i enjoy talking to!<br><hr><p>Wahlolly: <a href=\"https://discord.gg/CspDWhYxrN\">Discord Server</a></p><p>Michael (Mike): @mikethe223_2491 on Discord</p><p>Slinx92: <a href=\"https://slinx92.github.io/\">Website</a><a href=\"https://discord.gg/5CSFDVamPA\">Discord Server</a></p><p>Teleporter cell: @superbro112lol on Discord</p><p>Leaf: <a href=\"https://discord.gg/AVEEaJyGY6\">Discord Server</a>, @astrumleaf on Discord</p><p>Unity (itsunitygd)</p><p>Floppy: @slashred on Discord</p><p>Buggyruy1_hi</p><p>Tema5002</p><p>Milbru</p><p>Crecher</p></span>")
+	openWindow("50vw","5rem","25vw","my friends","<span><p>Here is the list of all of my friends i enjoy talking to!<br><hr><p>Wahlolly: <a href=\"https://discord.gg/CspDWhYxrN\">Discord Server</a></p><p>Michael (Mike): @mikethe223_2491 on Discord</p><p>Slinx92: <a href=\"https://slinx92.github.io/\">Website</a><a href=\"https://discord.gg/5CSFDVamPA\">Discord Server</a></p><p>Teleporter cell(Not longer called "Teleportercell". Now called "user3485873"): @superbro112lol(@user3485873) on Discord</p><p>Leaf: <a href=\"https://discord.gg/AVEEaJyGY6\">Discord Server</a>, @astrumleaf on Discord</p><p>Unity (itsunitygd)</p><p>Floppy: @slashred on Discord</p><p>Buggyruy1_hi</p><p>Tema5002</p><p>Milbru</p><p>Crecher</p></span>")
 }
 function linkWindow(link){
 	openWindow("60vw","16rem","20vw",link,"<iframe style=\"height:40rem;\" src=\""+link+"\"></iframe>");
