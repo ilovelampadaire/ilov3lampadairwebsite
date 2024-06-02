@@ -148,6 +148,14 @@ window.addEventListener('DOMContentLoaded', onLoad);
 
 <style>
 
+  body{
+    color:#000;
+  }
+
+  a{
+    color:#008;
+  }
+
   h1 {
     border-bottom: 1px solid #c0c0c0;
     margin-bottom: 10px;
@@ -381,8 +389,8 @@ window.addEventListener('DOMContentLoaded', onLoad);
 var loadTimeData;class LoadTimeData{constructor(){this.data_=null}set data(value){expect(!this.data_,"Re-setting data.");this.data_=value}valueExists(id){return id in this.data_}getValue(id){expect(this.data_,"No data. Did you remember to include strings.js?");const value=this.data_[id];expect(typeof value!=="undefined","Could not find value for "+id);return value}getString(id){const value=this.getValue(id);expectIsType(id,value,"string");return value}getStringF(id,var_args){const value=this.getString(id);if(!value){return""}const args=Array.prototype.slice.call(arguments);args[0]=value;return this.substituteString.apply(this,args)}substituteString(label,var_args){const varArgs=arguments;return label.replace(/\$(.|$|\n)/g,(function(m){expect(m.match(/\$[$1-9]/),"Unescaped $ found in localized string.");return m==="$$"?"$":varArgs[m[1]]}))}getBoolean(id){const value=this.getValue(id);expectIsType(id,value,"boolean");return value}getInteger(id){const value=this.getValue(id);expectIsType(id,value,"number");expect(value===Math.floor(value),"Number isn't integer: "+value);return value}overrideValues(replacements){expect(typeof replacements==="object","Replacements must be a dictionary object.");for(const key in replacements){this.data_[key]=replacements[key]}}}function expect(condition,message){if(!condition){throw new Error("Unexpected condition on "+document.location.href+": "+message)}}function expectIsType(id,value,type){expect(typeof value===type,"["+value+"] ("+id+") is not a "+type)}expect(!loadTimeData,"should only include this file once");loadTimeData=new LoadTimeData;window.loadTimeData=loadTimeData;console.warn("crbug/1173575, non-JS module files deprecated.");</script><script>loadTimeData.data = {"header":"Index de LOCATION","headerDateModified":"Date de modification","headerName":"Nom","headerSize":"Taille","language":"fr","parentDirText":"[répertoire parent]","textdirection":"ltr"};</script><script>start("D:\\lampadaire website\\ilov3lampadairwebsite\\");</script>
 <script>onHasParentDirectory();</script>
 <script>
-addRow("cat.png","gallery/cat.png",0,1,"23 KB",1712820483,"11/04/2024 08:53");
-addRow("ilov3lampadair.png","gallery/ilov3lampadair.png",0,1,"352 KB",1712820483,"11/04/2024 08:53");
+addRow("cat.png","cat.png",0,1,"23 KB",1712820483,"11/04/2024 08:53");
+addRow("ilov3lampadair.png","ilov3lampadair.png",0,1,"352 KB",1712820483,"11/04/2024 08:53");
 /*addRow(".git",".git",1,0,"0 B",1712818408,"11/04/2024 08:53:28");
 addRow("font","font",1,0,"0 B",1712820483,"11/04/2024 09:28:03");
 addRow("pages","pages",1,0,"0 B",1712818408,"11/04/2024 08:53:28");
