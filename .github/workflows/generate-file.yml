@@ -1,0 +1,23 @@
+name: Minify and make it work on LibreJS
+on:
+  push:
+    branches:
+      - main
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Minify JS
+        uses: egad13/web-minify-action@v0
+        with:
+          input-dir: ./
+          js: true
+          js-suffix: true
+      
+      - name: Add License
+        run: echo "$(cat js-license.txt index.min.js)" > index.min.js
