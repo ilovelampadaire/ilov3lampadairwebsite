@@ -13,7 +13,7 @@ jobs:
           ref: ${{ github.ref }}
 
       - name: Minify JS
-        uses: egad13/web-minify-action@v0
+        uses: egad13/web-minify-action
         with:
           input-dir: ./
           js: true
