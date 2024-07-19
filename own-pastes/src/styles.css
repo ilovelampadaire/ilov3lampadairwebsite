@@ -1,0 +1,56 @@
+p {
+    font-family: "Montserrat";
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+a {
+    font-family: "Montserrat";
+    color: white;
+}
+
+.black-text {
+    color: black;
+}
+
+.big-text {
+    font-size: 50;
+}
+
+.big11-text {
+    font-size: 17;
+}
+
+.big2-text {
+    font-size: 35;
+}
+
+.big22-text {
+    font-size: 28;
+}
+
+.big3-text {
+    font-size: 20;
+}
+
+.font {
+    font-family: "Montserrat";
+}
+
+.white-text {
+    color: white;
+}
+
+.red-text {
+    color: red;
+}
+
+.aligned-text {
+    text-align: center;
+    display: block;
+    margin-top: 40px;
+    /* text-shadow: 4px 2px blue; (Why was i thinking adding this) */
+}
