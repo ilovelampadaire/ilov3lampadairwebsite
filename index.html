@@ -1,91 +1,101 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<head>
+
+	<title>Lamp's official website</title>
+
+	<meta charset="UTF-8">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="style.css">
-	<div id="background"></div>
-	<ul>
-		<li><a onclick="galleryWindow();">Gallery</a></li>
-		<li><a onclick="contactWindow();">Contact Me</a></li>
-		<li><a onclick="aboutWindow();">About Me</a></li>
-		<li><a onclick="friendsWindow();">My Friends</a></li>
-	</ul>
-	<!--<a href="pages/gallery.html">Gallery</a>
-	<a class="spaceing" href="pages/socials.html" style="text-shadow: 5px 5px 10px #0400ff;">Socials</a>
-	<a class="spaceing2" href="pages/testing2.html">Gallery (Better)</a>
-	<a class="spaceing3" href="pages/aboutme.html">About me</a> -->
-	<h1>Welcome to my website!</h1>
-	<p style="text-align: center;">Click any of these buttons to open windows.</p>
-	<div id="windows">
-		<!--<div class="window" style="width:80vw;top:10rem;left:10vw;">
-			<div class="window-header">drag me!</div>
-			<div class="window-content">
-				<p>sample text</p>
-			</div>
-		</div>-->
-	</div>
-	<div id="taskbar">
-		<div id="tasktext">
-		</div>
-		<div id="settings">
-			<input type="checkbox" id="wallpaperEffect" name="wallpaperEffect" />
-			<label for="wallpaperEffect">Use Wallpaper Effect (laggy)</label>
-		</div>
-	</div>
-	
+
 	<script src="funfacts.js"></script>
 	<script src="index.js"></script>
-	
-	<svg>
-	<defs>
-	<filter id="pixelate" x="0" y="0">
-		<feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="2" id="turb" stitchTiles="stitch" result="turbulence"/>
-		<feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="B"/>
-		<feGaussianBlur result="given" stdDeviation="10" id="blur" />
+
+	</head>
+	<body>
+		<div id="background"></div>
+		<ul>
+			<li><a onclick="galleryWindow();">Gallery</a></li>
+			<li><a onclick="contactWindow();">Contact Me</a></li>
+			<li><a onclick="aboutWindow();">About Me</a></li>
+			<li><a onclick="friendsWindow();">My Friends</a></li>
+		</ul>
+		<!--<a href="pages/gallery.html">Gallery</a>
+		<a class="spaceing" href="pages/socials.html" style="text-shadow: 5px 5px 10px #0400ff;">Socials</a>
+		<a class="spaceing2" href="pages/testing2.html">Gallery (Better)</a>
+		<a class="spaceing3" href="pages/aboutme.html">About me</a> -->
+		<h1>Welcome to my website!</h1>
+		<p style="text-align: center;">Click any of these buttons to open windows.</p>
+		<div id="windows">
+			<!--<div class="window" style="width:80vw;top:10rem;left:10vw;">
+				<div class="window-header">drag me!</div>
+				<div class="window-content">
+					<p>sample text</p>
+				</div>
+			</div>-->
+		</div>
+		<div id="taskbar">
+			<div id="tasktext">
+			</div>
+			<div id="settings">
+				<input type="checkbox" id="wallpaperEffect" name="wallpaperEffect" />
+				<label for="wallpaperEffect">Use Wallpaper Effect (laggy)</label>
+			</div>
+		</div>
 		
-		<feFlood x="4" y="4" height="2" width="2"/>
 		
-		<feComposite width="10" height="10" id="px"/>
+		<svg>
+		<defs>
+		<filter id="pixelate" x="0" y="0">
+			<feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="2" id="turb" stitchTiles="stitch" result="turbulence"/>
+			<feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="B"/>
+			<feGaussianBlur result="given" stdDeviation="10" id="blur" />
 		
-		<feTile result="a"/>
+			<feFlood x="4" y="4" height="2" width="2"/>
 		
-		<feComposite in="given" in2="a" 
-					 operator="in"/>
+			<feComposite width="10" height="10" id="px"/>
 		
-		<feMorphology operator="dilate"
-					  radius="5"/>
+			<feTile result="a"/>
 		
-		<feBlend mode="difference" in2="SourceGraphic" />
-		<feBlend mode="exclusion" in2="SourceGraphic" />
+			<feComposite in="given" in2="a" 
+						 operator="in"/>
 		
-	  </filter>
-	  <animate
-		  xlink:href="#px"
-		  attributeName="width"
-		  values="4;8;7;6;4"
-		  dur="5s"
-		  repeatCount="indefinite" />
-	  <animate
-		  xlink:href="#px"
-		  attributeName="height"
-		  values="4;6;7;8;4"
-		  dur="5s"
-		  repeatCount="indefinite" />
-	  <animate
-		  xlink:href="#blur"
-		  attributeName="stdDeviation"
-		  values="2 2;5 1;4 4;1 5;2 2"
-		  dur="10s"
-		  repeatCount="indefinite" />
-	  <animate
-		  xlink:href="#turb"
-		  attributeName="seed"
-		  values="1;20"
-		  dur="10s"
-		  repeatCount="indefinite" />
-	</defs>
-	</svg>
-</body>
+			<feMorphology operator="dilate"
+						  radius="5"/>
+		
+			<feBlend mode="difference" in2="SourceGraphic" />
+			<feBlend mode="exclusion" in2="SourceGraphic" />
+			
+		  </filter>
+		  <animate
+			  xlink:href="#px"
+			  attributeName="width"
+			  values="4;8;7;6;4"
+			  dur="5s"
+			  repeatCount="indefinite" />
+		  <animate
+			  xlink:href="#px"
+			  attributeName="height"
+			  values="4;6;7;8;4"
+			  dur="5s"
+			  repeatCount="indefinite" />
+		  <animate
+			  xlink:href="#blur"
+			  attributeName="stdDeviation"
+			  values="2 2;5 1;4 4;1 5;2 2"
+			  dur="10s"
+			  repeatCount="indefinite" />
+		  <animate
+			  xlink:href="#turb"
+			  attributeName="seed"
+			  values="1;20"
+			  dur="10s"
+			  repeatCount="indefinite" />
+		</defs>
+		</svg>
+	</body>
 </html>
