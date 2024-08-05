@@ -23,7 +23,7 @@ body {
 	width:100vw;height:100vh;
 	margin:0;padding:0;border:none;
 	float:left;
-	overflow-x:hidden;overflow-y:auto;
+	overflow: hidden;
 }
 
 div#background{
@@ -157,6 +157,9 @@ div.window div.window-header a.winrem{
     display: inline-block;
     float: right;
     height: 10px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAfUlEQVQoU42SUQ7AIAhDZdn9r+wsswQF3PjRSB9gQ+u9NwRO3vWhCOouQiLyVjiHaRSc8GCPMCCh3kDCmDppukDIL+AEUNXDAYLuLr7kYRvPa7OOXwZpvgI53j62FV3A4ap65N2b92CYgQXEDqGzgoTGVqRGZG7LnzXL3HoAxeEvCMOFhKEAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 *{
 	-webkit-font-smoothing: none !important;
