@@ -192,3 +192,214 @@ div#taskbar div#settings{
 		clip: rect(0, 100vw, 100vh, 0);
 	}
 }
+
+/* cool animations things */
+
+/* spins forever */
+.spin,
+.spin-slow,
+.spin-rev,
+.spin-slow-rev {
+    animation-name: spin;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+}
+.spin-slow {
+    animation-duration: 100000ms;
+}
+.spin-rev {
+    animation-direction: reverse;
+}
+.spin-slow-rev {
+    animation-duration: 100000ms;
+    animation-direction: reverse;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* tilt on hover with easing */
+.tilt {
+    transition: 0.2s;
+}
+.tilt:hover {
+    transform: rotate(3deg);
+}
+
+/* spin on hover with easing */
+.twist {
+    transition: 1s;
+}
+.twist:hover {
+    transform: rotate(360deg);
+}
+
+.slow-twist {
+    transition: 8s;
+}
+.slow-twist:hover {
+    transform: rotate(360deg);
+}
+/* im lazy to comment further */
+
+.wiggle-hover:hover {
+    animation: wiggle 0.55s linear infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.blink {
+    animation: blink-animation 0.95s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.tossing {
+    animation-name: tossing;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+@keyframes tossing {
+    0% {
+        transform: rotate(-9deg);
+    }
+    50% {
+        transform: rotate(9deg);
+    }
+    100% {
+        transform: rotate(-9deg);
+    }
+}
+
+.tossing-alt {
+    animation-name: tossing-alt;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+@keyframes tossing-alt {
+    0% {
+        transform: rotate(9deg);
+    }
+    50% {
+        transform: rotate(-9deg);
+    }
+    100% {
+        transform: rotate(9deg);
+    }
+}
+
+.bobbing {
+    animation: bobbing 2s ease-in-out infinite;
+    animation-direction: alternate;
+}
+.bobbing-slow {
+    animation: bobbing 4s ease-in-out infinite;
+    animation-direction: alternate;
+}
+@keyframes bobbing {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.swing {
+    animation-name: swing;
+    animation-duration: 8s;
+    transform-origin: top center;
+    animation-iteration-count: infinite;
+}
+@keyframes swing {
+    0% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+        animation-timing-function: ease-out;
+    }
+
+    40% {
+        transform: perspective(700px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: perspective(700px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+        animation-timing-function: ease-in;
+    }
+
+    80% {
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        transform: perspective(400px);
+        animation-timing-function: ease-in;
+    }
+}
+
+.flip:hover {
+    backface-visibility: visible;
+    animation: flip 1.3s;
+}
+
+.pulse {
+    animation-fill-mode: both;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+}
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
